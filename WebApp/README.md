@@ -1,3 +1,0 @@
-WebApp
-
-Written in AngularJS
