@@ -1,6 +1,6 @@
 Basketball League App
 
-Web App uses AngularJS
-Server side uses ExpressJS on top of NodeJS
-Database is MySQL
-Uses Ionic for Mobile
+Web App uses AngularJS<br>
+Server side uses ExpressJS on top of NodeJS<br>
+Database is MySQL<br>
+Uses Ionic for Mobile<br>
