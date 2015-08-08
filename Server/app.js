@@ -4,10 +4,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mysql   = require("mysql");
+
+connection = mysql.createConnection({ // Mysql Connection
+        connectionLimit : 100,
+        host : 'localhost',
+        user : 'root',
+        password : 'nbuser',
+        database : 'restful_api_demo',
+        debug : false    
+});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
 var app = express();
 
 // view engine setup
