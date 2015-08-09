@@ -3,7 +3,6 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  // res.send('respond with a resource xxx' + tmp);
 	var data = {
 	    "error":1,
 	    "Teams":""
@@ -23,6 +22,7 @@ router.get('/', function(req, res) {
 
 router.post('/',function(req,res){	
     var Name = req.body.name;
+    var Logo = req.body.logo;
     var data = {
         "error":1,
         "Teams":""
@@ -55,7 +55,7 @@ router.put('/',function(req,res){
         "Teams":""
     };
 
-    if(!!Id && !!Email && !!Logo){
+    if(!!Id && !!Name && !!Logo){
         connection.query("UPDATE teams SET name=?, logo=? WHERE team_id=?",[Name,Logo,Id],function(err, rows, fields){
             if(!!err) {
                 data["Teams"] = "Error Updating data: " + err;
@@ -86,7 +86,7 @@ router.delete('/',function(req,res){
                 console.log(err);
             } else {
                 data["error"] = 0;
-                data["Teams"] = "Delete Book Successfully";
+                data["Teams"] = "Deleted Teams Record Successfully";
             }
             res.json(data);
         });
