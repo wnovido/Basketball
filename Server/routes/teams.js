@@ -1,6 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
+router.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 /* GET users listing. */
 router.get('/', function(req, res) {
 	var data = {
@@ -9,14 +16,21 @@ router.get('/', function(req, res) {
 	};
 
 	connection.query("SELECT * from teams",function(err, rows, fields) {
-	    if(rows.length != 0) {
+        if (err) 
+            return res.status(404).send({message: 'No Teams Found'});
+        else
+            return res.jsonp(rows);
+
+	    /*if(rows.length != 0) {
 	        data["error"] = 0;
 	        data["Teams"] = rows;
-	        res.json(data);
+	        res.jsonp(rows);
 	    } else {
 	        data["Teams"] = 'No Teams Record Found..';
-	        res.json(data);
-	    }
+	        res.jsonp(res.status(404).send({message: 'No Teams Found'}));
+            // return res.status(404).send({message: 'Tab Not Found'});  
+	    }*/
+
 	});
 });
 
