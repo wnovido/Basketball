@@ -18,6 +18,5 @@ angular.module('myApp.view1', ['ui.router'])
 .controller('View1Ctrl', ['$scope', 'UserService', function($scope,UserService) {
 	$scope.items = ["A", "List", "Of", "Items"];
   $scope.users = UserService.query();
-  _.first([5, 4, 3, 2, 1]);
-  
+  _.each({one: 1, two: 2, three: 3}, alert);
 }]);

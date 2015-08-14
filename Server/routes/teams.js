@@ -9,7 +9,7 @@ router.use(function(req, res, next) {
 });
 
 
-/* GET users listing. */
+/* GET teams listing. */
 router.get('/', function(req, res) {
 	connection.query("SELECT * FROM teams",function(err, rows) {
         if (rows.length == 0) {
