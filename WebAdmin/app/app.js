@@ -1,5 +1,10 @@
 'use strict';
 
+var underscore = angular.module('underscore', []);
+underscore.factory('_', function() {
+  return window._; //Underscore must already be loaded on the page
+});
+
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ui.router',
@@ -7,7 +12,8 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.version',
   'ngResource',
-  'myApp.view1_services'
+  'myApp.view1_services',
+  'underscore'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -16,3 +22,5 @@ angular.module('myApp', [
 })
 
 ;
+
+

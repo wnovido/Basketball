@@ -15,8 +15,18 @@ angular.module('myApp.view1', ['ui.router'])
           })
 })          
 
-.controller('View1Ctrl', ['$scope', 'UserService', function($scope,UserService) {
-	$scope.items = ["A", "List", "Of", "Items"];
-  $scope.users = UserService.query();
-  _.each({one: 1, two: 2, three: 3}, alert);
+// .controller('View1Ctrl', ['$scope', 'UserService', '_', function($scope,UserService,_) {
+    // $scope.items = ["A", "List", "Of", "Items"];
+    // $scope.users = UserService.query();
+
+    // var init = function() {
+        // _.keys($scope);
+    // }
+    // init();
+
+// }]);
+
+.controller('View1Ctrl', ['$scope', function($scope) {
+    $scope.users = ["A", "List", "Of", "Items"];
 }]);
+
