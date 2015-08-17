@@ -15,18 +15,18 @@ angular.module('myApp.view1', ['ui.router'])
           })
 })          
 
-// .controller('View1Ctrl', ['$scope', 'UserService', '_', function($scope,UserService,_) {
+.controller('View1Ctrl', ['$scope', 'TeamService', '_', function($scope,TeamService,_) {
     // $scope.items = ["A", "List", "Of", "Items"];
-    // $scope.users = UserService.query();
+    $scope.teams = TeamService.query();
 
-    // var init = function() {
-        // _.keys($scope);
-    // }
-    // init();
+    var init = function() {
+        _.keys($scope);
+    }
+    init();
 
-// }]);
-
-.controller('View1Ctrl', ['$scope', function($scope) {
-    $scope.users = ["A", "List", "Of", "Items"];
 }]);
+
+// .controller('View1Ctrl', ['$scope', function($scope) {
+    // $scope.users = ["A", "List", "Of", "Items"];
+// }]);
 

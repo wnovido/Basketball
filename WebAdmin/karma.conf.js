@@ -8,6 +8,7 @@ module.exports = function(config){
       'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
       'app/bower_components/angular-resource/angular-resource.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/view1/view1_services.js',
       'app/components/**/*.js',
       'app/view*/**/*.js'
     ],
@@ -16,7 +17,7 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome', 'Firefox'],
+    browsers : ['Chrome'],
 
     plugins : [
             'karma-chrome-launcher',
