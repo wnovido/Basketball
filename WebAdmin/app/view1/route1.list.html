@@ -2,3 +2,41 @@
 <ul>
   <li ng-repeat="team in teams">{{team.name}}</li>
 </ul>
+
+ <div class="row">
+      <div class="col-sm-2">
+        <input type="checkbox" ng-model="switchModel" data-nq-switch-button="">
+      </div>
+      <div class="col-sm-2">
+        <input type="checkbox" ng-model="switchModel2" data-nq-switch-button="" data-theme="warning,rounded">
+      </div>
+      <div class="col-sm-2">
+        <input type="checkbox" ng-model="switchModel3" data-nq-switch-button="" checked="checked" data-theme="danger,stripped">
+      </div>
+      <div class="col-sm-2">
+        <input type="checkbox" ng-model="switchModel4" data-nq-switch-button="" checked="checked" data-theme="danger,stripped,rounded">
+      </div>
+    </div>
+  
+<br>
+<br>
+<hr>
+                      <div class="row">
+                        <div class="col-sm-4">
+                            <h2 class="directive"><code>nqSwitchButton</code></h2>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <input type="checkbox" ng-model="switchModel" data-nq-switch-button="" data-theme="info">
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="checkbox" ng-model="switchModel2" data-nq-switch-button="" data-theme="warning">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="checkbox" data-label-text="Accept" data-true-label="YES" data-false-label="NO" data-ng-model="switchModel7" data-nq-switch-button="" data-theme="primary">
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>

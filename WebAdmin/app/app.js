@@ -1,5 +1,7 @@
 'use strict';
 
+// Do this to underscore to be injected as dependency which would allow underscore to be swapped out at test time
+// From this article https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make#3-dependency-injection
 var underscore = angular.module('underscore', []);
 underscore.factory('_', function() {
   return window._; //Underscore must already be loaded on the page
