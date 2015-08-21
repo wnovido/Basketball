@@ -13,7 +13,10 @@ angular.module('myApp', [
   'myApp.version',
   'ngResource',
   'myApp.view1_services',
-  'underscore'
+  'underscore',
+  'ngSanitize',
+  'ngAnimate',
+  'ngQuantum'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {

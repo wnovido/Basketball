@@ -12,8 +12,7 @@
     "html5-boilerplate": "~5.2.0",
     "angular-ui-router": "~0.2.15",
     "angular-resource": "~1.4.3",
-    "underscore": "~1.8.3",
-    "quantumui": "~1.0.0"
+    "underscore": "~1.8.3"
   },
   "resolutions": {
     "angular": ">= 1.0.8"
