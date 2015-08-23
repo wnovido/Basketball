@@ -1,4 +1,4 @@
-angular.module( 'sample.login', [
+angular.module( 'myApp.login', [
   'ui.router',
   'angular-storage'
 ])
