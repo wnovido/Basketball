@@ -18,7 +18,7 @@ angular.module('myApp', [
   'underscore',
   'ngSanitize',
   'ngAnimate',
-  'ngQuantum'
+  'ngQuantum','ui.bootstrap'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {

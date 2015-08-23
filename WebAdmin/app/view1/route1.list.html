@@ -18,9 +18,6 @@
       </div>
     </div>
   
-<br>
-<br>
-<hr>
                       <div class="row">
                         <div class="col-sm-4">
                             <h2 class="directive"><code>nqSwitchButton</code></h2>
@@ -40,3 +37,12 @@
                         </div>
                         <hr />
                     </div>
+
+<br>
+<br>
+<hr>
+
+<!-- <div ng-controller="AlertDemoCtrl"> -->
+  <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+  <button type="button" class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+<!-- </div> -->
