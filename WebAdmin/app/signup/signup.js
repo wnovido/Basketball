@@ -1,6 +1,7 @@
 angular.module( 'myApp.signup', [
-  'ui.router',
-  'angular-storage'
+  'ui.router'
+  // ,
+  // 'angular-storage'
 ])
 .config(function($stateProvider) {
   $stateProvider.state('signup', {

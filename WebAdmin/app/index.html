@@ -20,103 +20,160 @@
 
 </head>
 
-<body class="container">
+<body style="height:100%; padding-top:55px;">
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <header>
+      <div class="navbar navbar-fixed-top" style="margin:0;">
+          <div class="container-fluid">
+              <!-- <div class="pull-left" style="height:50px; width:35px;" ng-hide="myLeftAside.$isOpen"> -->
+                  <!-- <a href="#" class="titip-right" data-title="Toggle Aside" data-aside-toggle="#leftMenuAside" style="padding-top:15px; font-size:14px; color:#fff;"> -->
+                      <!-- <i class="glyphicon glyphicon-menu-hamburger"></i> -->
+                  <!-- </a> -->
+              <!-- </div> -->
 
-
-  <!-- Dropdown Menu -->
-  <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-          <li>
-              <a role="button" tabindex="1" data-nq-dropdown="" data-qo-placement="bottom-right">
-                  Dropdown
-                  <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" tabindex="-1" role="menu">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-              </ul>
-          </li>
-          <li>
-              <a href="#" data-nq-dropdown="" data-qo-show-arrow="true">
-                  Dropdown Container
-                  <span class="caret"></span>
-              </a>
-              <div class="dropdown-container" style="min-width:300px;">
-                  <div class="dc-header">
-                      <strong>Container Header</strong>
-                  </div>
-                  <div class="dc-body" style="max-height:250px; padding:0;">
-                      <div class="list-group">
-                          <a href="#" class="list-group-item active">
-                              <h4 class="list-group-item-heading">List group item heading</h4>
-                              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                          </a>
-                          <a href="#" class="list-group-item">
-                              <h4 class="list-group-item-heading">List group item heading</h4>
-                              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                          </a>
-                          <a href="#" class="list-group-item">
-                              <h4 class="list-group-item-heading">List group item heading</h4>
-                              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                          </a>
-                      </div>
-                  </div>
-                  <div class="dc-footer">
-                      <strong>Container Footer</strong>
-                  </div>
+              <div class="navbar-header-right">
+                  <button type="button" class="navbar-toggle" data-nq-collapse="" data-target-id=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
               </div>
-          </li>
-          <li>
-              <a href="#" data-aside-toggle="#tasksAside">
-                  Right Aside
-              </a>
-          </li>
-          <li class="active">
-              <a href="http://quantumui.org">
-                  Go Online
-              </a>
-          </li>
-      </ul>
-  </div>
+              <div class="navbar-header">
+                  <a class="navbar-brand" ui-sref="route1" style="padding:5px 15px;">
+                      <img src="img/logo_logo_201107111716014.png" alt="Logo" style="width:12%"/>
+                  </a>
 
+              </div>
 
+              <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li>
+                          <a role="button" tabindex="1" data-nq-dropdown="" data-qo-placement="bottom-right">
+                              Groups
+                              <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" tabindex="-1" role="menu">
+                              <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="route1">List</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="route2">Route 2</a></li>
+                              <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li> -->
+                              <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li> -->
+                          </ul>
+                      </li>
+                      <li>
+                          <a href="#" data-nq-dropdown="" data-qo-show-arrow="true">
+                              Menu
+                              <span class="caret"></span>
+                          </a>
+                          <div class="dropdown-container" style="min-width:300px;">
+                              <div class="dc-header">
+                                  <strong>Container Header</strong>
+                              </div>
+                              <div class="dc-body" style="max-height:250px; padding:0;">
+                                  <div class="list-group">
+                                      <a href="#" class="list-group-item active">
+                                          <h4 class="list-group-item-heading">List group item heading</h4>
+                                          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                      </a>
+                                      <a href="#" class="list-group-item">
+                                          <h4 class="list-group-item-heading">List group item heading</h4>
+                                          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                      </a>
+                                      <a href="#" class="list-group-item">
+                                          <h4 class="list-group-item-heading">List group item heading</h4>
+                                          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="dc-footer">
+                                  <strong>Container Footer</strong>
+                              </div>
+                          </div>
+                      </li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="login">Login</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="signup">Signup</a></li>
+                      
+                      <!-- <li> -->
+                          <!-- <a href="#" data-aside-toggle="#tasksAside"> -->
+                              <!-- Right Aside -->
+                          <!-- </a> -->
+                      <!-- </li> -->
+                      <!-- <li class="active"> -->
+                          <!-- <a href="http://quantumui.org"> -->
+                              <!-- Go Online -->
+                          <!-- </a> -->
+                      <!-- </li> -->
 
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </header>
 
-
-
-
-
-
-  <p><i>Best viewed in pop-out mode to see location changes. Click blue button on the right.</i></p>
-
-  <div class="navbar">
-    <div class="navbar-inner">
-      <a class="brand" href="#">Quick Start</a>
-      <ul class="nav">
-        <li><a ui-sref="route1">Route 1xxx</a></li>
-        <li><a ui-sref="route2">Route 2xxx</a></li>
-      </ul>
-    </div>
-  </div>
-
-
-
-  <div class="row">
-    <div class="span12">
+  
+  <!-- <div class="row"> -->
+    <!-- <div class="span12"> -->
       <div class="well" ui-view></div>        
-    </div>
-  </div>         
+    <!-- </div> -->
+  <!-- </div>          -->
   
 
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <footer style="background-color:#fefefe; padding:0 0 20px 0;">
+      <hr />
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-6">
+                  <p class="color-base text-sm">
+                      <b>Vidznovi</b> core
+                      licensed under <a href="http://opensource.org/licenses/MIT"> The MIT Licence</a>
+                  </p>
+                  <p class="color-base text-sm">
+                      Documentation
+                      licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0.</a>
+                  </p>
+              </div>
+              <div class="col-sm-6">
+                  <p class="text-right">
+                      <a aria-label="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://quantumui.org', '', 'height=500, width=600')" class=" btn btn-info">
+                          Facebook
+                      </a>
+                      <a aria-label="Share on Twitter" onclick="window.open('https://twitter.com/share?text=&#64;quantumui%20-%20QuantumUI is the most powerful native ANGULARJS and Bootstrap CSS based UI components.', '', 'height=250, width=600')" class="btn btn-info">
+                          Twitter
+                      </a>
+                      <a aria-label="Share on Linkedin" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=http://quantumui.org&amp;title=QuantumUI&amp;summary=QuantumUI is the most powerful native ANGULARJS and Bootstrap CSS based UI components make developer life easy.', '', 'height=625, width=500')" class="btn btn-info">
+                          Linkedin
+                      </a>
+                      <a aria-label="Share on G+" onclick="window.open('https://plus.google.com/share?url=http://quantumui.org', '', 'height=500, width=600')" rel="publisher" class="btn btn-info">
+                          GPlus
+                      </a>
+                      <a href="https://github.com/quantumui" target="_self" class="btn btn-info">
+                          Github
+                      </a>
+                  </p>
+                  <p class="text-right">
+                      <a href="mailto:info@quantumui.org" class="color-base text-xs">
+                          <i class="fic fu-envelope-alt"></i> Send Email
+                      </a>
+
+                  </p>
+              </div>
+          </div>
+          <p class="text-center color-base text-xs">
+
+              All rights reserved.
+          </p>
+      </div>
+  </footer>
+
+
+
+
+  <!-- <div>Angular seed app: v<span app-version></span></div> -->
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -139,6 +196,8 @@
   <script src="view1/view1.js"></script>
   <script src="view1/view1_services.js"></script>
   <script src="view2/view2.js"></script>
+  <script src="login/login.js"></script>
+  <script src="signup/signup.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

@@ -1,6 +1,7 @@
 angular.module( 'myApp.login', [
-  'ui.router',
-  'angular-storage'
+  'ui.router'
+  // ,
+  // 'angular-storage'
 ])
 .config(function($stateProvider) {
   $stateProvider.state('login', {

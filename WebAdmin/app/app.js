@@ -18,12 +18,12 @@ angular.module('myApp', [
   'underscore',
   'ngSanitize',
   'ngAnimate',
-  'ngQuantum','ui.bootstrap'
+  'ngQuantum','ui.bootstrap','myApp.login','myApp.signup'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
-      // For any unmatched url, send to /route1
-      $urlRouterProvider.otherwise("/route1")
+      // For any unmatched url, send to /login
+      $urlRouterProvider.otherwise("/login")
 })
 
 ;
