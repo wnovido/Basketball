@@ -1,4 +1,11 @@
 <h1>Route 1</h1>
 <hr/>
 <a ui-sref=".list">Show List</a>
+
+
+  <h4>Upload on file select</h4>
+  <button multiple ngf-select="uploadFiles($files)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">Select Files</button>
+  <div class="button" ngf-select ng-model="files" ngf-multiple="true" ngf-pattern="'image/*" accept="image/*">Upload multiple images using model $watch</div>
+  <br><br>
+
 <div ui-view></div>

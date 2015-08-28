@@ -1,0 +1,6 @@
+<attach for=element event=onmouseover handler=topm>
+<attach for=element event=onmouseout handler=verm>
+<script>
+  function topm(){element.className='hover';}
+  function verm(){element.className='';}
+</script>

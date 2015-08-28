@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link href="http://cdn.quantumui.org/v1.0.0/effect-light.min.css" rel="stylesheet" />
+  <link href="http://cdn.quantumui.org/v1.0.0/quantumui.min.css" rel="stylesheet" />
+
+</head>
+
+<body style="height:100%; padding-top:55px;">
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <header>
+      <div class="navbar navbar-inverse navbar-fixed-top" style="margin:0;">
+          <div class="container-fluid">
+              <!-- <div class="pull-left" style="height:50px; width:35px;" ng-hide="myLeftAside.$isOpen"> -->
+                  <!-- <a href="#" class="titip-right" data-title="Toggle Aside" data-aside-toggle="#leftMenuAside" style="padding-top:15px; font-size:14px; color:#fff;"> -->
+                      <!-- <i class="glyphicon glyphicon-menu-hamburger"></i> -->
+                  <!-- </a> -->
+              <!-- </div> -->
+
+              <div class="navbar-header-right">
+                  <button type="button" class="navbar-toggle" data-nq-collapse="" data-target-id=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+              </div>
+              <div class="navbar-header">
+                  <a class="navbar-brand" ui-sref="route1" style="padding:5px 15px;">
+                      <img src="img/logo.png" alt="Logo"/>
+                  </a>
+
+              </div>
+
+              <div class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li>
+                          <a role="button" tabindex="1" data-nq-dropdown="" data-qo-placement="bottom-right">
+                              Groups
+                              <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" tabindex="-1" role="menu">
+                              <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="route1">List</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="route2">Route 2</a></li>
+                              <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li> -->
+                              <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li> -->
+                          </ul>
+                      </li>
+                      <li>
+                          <a href="#" data-nq-dropdown="" data-qo-show-arrow="true">
+                              Menu
+                              <span class="caret"></span>
+                          </a>
+                          <div class="dropdown-container" style="min-width:300px;">
+                              <div class="dc-header">
+                                  <strong>Container Header</strong>
+                              </div>
+                              <div class="dc-body" style="max-height:250px; padding:0;">
+                                  <div class="list-group">
+                                      <a href="#" class="list-group-item active">
+                                          <h4 class="list-group-item-heading">List group item heading</h4>
+                                          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                      </a>
+                                      <a href="#" class="list-group-item">
+                                          <h4 class="list-group-item-heading">List group item heading</h4>
+                                          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                      </a>
+                                      <a href="#" class="list-group-item">
+                                          <h4 class="list-group-item-heading">List group item heading</h4>
+                                          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="dc-footer">
+                                  <strong>Container Footer</strong>
+                              </div>
+                          </div>
+                      </li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="login">Login</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="signup">Signup</a></li>
+                      
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </header>
+
+  
+  <div class="row">
+    <div class="span12">
+      <div class="well" ui-view></div>        
+    </div>
+  </div>         
+  
+
+
+  <footer style="background-color:#fefefe; padding:0 0 20px 0;">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-6">
+                  <p class="color-base text-sm">
+                      <b>Vidznovi</b> core
+                      licensed under <a href="http://opensource.org/licenses/MIT"> The MIT Licence</a>
+                  </p>
+                  <p class="color-base text-sm">
+                      Documentation
+                      licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0.</a>
+                  </p>
+              </div>
+              <div class="col-sm-6">
+                  <p class="text-right">
+                      <a aria-label="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://quantumui.org', '', 'height=500, width=600')" class=" btn btn-info">
+                          Facebook
+                      </a>
+                      <a aria-label="Share on Twitter" onclick="window.open('https://twitter.com/share?text=&#64;quantumui%20-%20QuantumUI is the most powerful native ANGULARJS and Bootstrap CSS based UI components.', '', 'height=250, width=600')" class="btn btn-info">
+                          Twitter
+                      </a>
+                      <a aria-label="Share on Linkedin" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=http://quantumui.org&amp;title=QuantumUI&amp;summary=QuantumUI is the most powerful native ANGULARJS and Bootstrap CSS based UI components make developer life easy.', '', 'height=625, width=500')" class="btn btn-info">
+                          Linkedin
+                      </a>
+                      <a aria-label="Share on G+" onclick="window.open('https://plus.google.com/share?url=http://quantumui.org', '', 'height=500, width=600')" rel="publisher" class="btn btn-info">
+                          GPlus
+                      </a>
+                      <a href="https://github.com/quantumui" target="_self" class="btn btn-info">
+                          Github
+                      </a>
+                  </p>
+                  <p class="text-right">
+                      <a href="mailto:info@quantumui.org" class="color-base text-xs">
+                          <i class="fic fu-envelope-alt"></i> Send Email
+                      </a>
+
+                  </p>
+              </div>
+          </div>
+          <p class="text-center color-base text-xs">
+
+              All rights reserved.
+          </p>
+      </div>
+  </footer>
+
+
+
+
+  <!-- <div>Angular seed app: v<span app-version></span></div> -->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  
+
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>     
+  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>   
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>   
+  
+
+  <script src="http://cdn.quantumui.org/v1.0.0/quantumui-all.min.js"></script>
+  <script src="http://cdn.quantumui.org/v1.0.0/icons.js"></script>
+
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view1/view1_services.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="login/login.js"></script>
+  <script src="signup/signup.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+
+
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>   
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>   
+
+</body>
+</html>
