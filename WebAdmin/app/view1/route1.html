@@ -1,11 +1,288 @@
-<h1>Route 1</h1>
-<hr/>
-<a ui-sref=".list">Show List</a>
+<!--<h1>Route 1</h1>-->
+<!--<hr/>-->
+<!--<a ui-sref=".list">Show List</a>-->
+
+<div class="clearfix">
+    <h1> <i class="glyphicon glyphicon-fire"></i> List Of Teams</h1>
+    <hr />
+    <div class="panel panel-default" data-nq-pageable="contactList" data-qo-alias="contactsTable" data-qo-pageable-model="contacts"
+         data-qo-selectable="true" data-on-refresh="tableScroller.refresh();">
+
+        <div class="panel-heading clearfix">
+            <!--add nq-paging-sizes directive where you want and how many you want-->
+            <div class="pull-right" data-nq-paging-sizes=""></div>
+            <!--add nq-table-search directive where you want and how many you want-->
+            <div class="pull-right" data-nq-table-search="" data-search-fields="firstname,lastname,profile.jobtitle" style="margin-right:20px;"></div>
+            <h2 class="panel-title pull-left"><i class="fic glyphicon glyphicon-user"></i> Teams</h2>
+            <div class="pull-left" style="padding-left:15px;">
+                <button type="button" class="btn btn-xs btn-info" ng-click="contactsTable.refresh()"><i class="fic glyphicon glyphicon-refresh"></i> Refresh</button>
+            </div>
+            <div class="pull-left" style="padding-left:15px;">
+                <button type="button" class="btn btn-xs btn-primary" data-nq-show-insert=""><i class="fic glyphicon glyphicon-plus-sign"></i> Add New</button>
+            </div>
+            <div class="pull-left" style="padding-left:15px;">
+                <button type="button" class="btn btn-xs btn-danger" ng-click="contactsTable.removeRows()"><i class="fic glyphicon glyphicon-remove-circle"></i> Remove</button>
+            </div>
+        </div>
+
+        <div class="panel-body table-responsive" data-nq-scroll="" data-qo-max-height="350px" data-qo-bar-offset="40" data-bar-model="tableScroller" style="overflow:hidden;">
+            <table class="table table-bordered table-hover bg-white">
+                <!--nq-fix-table-scroll class would fix thead always visible at top of the table if you put the table into a scrollable container-->
+                <thead class="nq-fix-table-scroll">
+                <tr>
+                    <!--nq-column-sort directive would bind sorting handler to the element-->
+                    <th colspan="2" data-nq-column-sort="firstname" data-use-template="true">Name</th>
+                    <th class="col-xs-2" data-nq-column-sort="profile.jobtitle" data-use-template="true">Coach</th>
+                    <th class="col-xs-3">Logo</th>
+                    <th class="col-xs-2">Win</th>
+                    <th class="col-xs-1">Loss</th>
+                </tr>
+                </thead>
+
+                <tbody class="flattened">
+                <!--pageable-repeat is required sub directive-->
+                <tr class="" data-pageable-repeat="contact in contacts track by contact.id">
+                    <td class="width-48">
+                        <img class="img-circle" data-fall-back-bg="" ng-src="http://quantumui.org/data/images/users/thumbs/{{contact.images.img32}}" />
+                    </td>
+                    <td>
+                        <span class="text-block text-sm">
+                            <strong>{{contact.firstname}} {{contact.lastname}}</strong>
+                        </span>
+                        <i class="text-xs gray">{{contact.email}}</i>
+                    </td>
+                    <td>
+                        <span class="text-block text-xs">
+                            <small>{{contact.profile.company}}</small>
+                        </span>
+                        <i class="text-xs gray">{{contact.profile.jobtitle}}</i>
+                    </td>
+                    <td>
+                        <span class="text-block text-xs">
+                            <small data-max-text-length="25">{{contact.profile.graduate}}</small>
+                        </span>
+                        <i data-max-text-length="30" data-use-tip="true" class="text-xs">{{contact.profile.school}}</i>
+                    </td>
+                    <td>
+                        <span class="text-block text-sm">
+                            <small>{{contact.profile.phones.work}}</small>
+                        </span>
+                        <span class="text-block">
+                            <span class="label text-xs label-info">Eye</span> <i class="text-xs gray"> {{contact.profile.eyeColor}}</i>
+                        </span>
+                    </td>
+                    <td>
+                        <a role="button" tabindex="0" ng-click="removeRow()" class="titip-left" data-title="Remove">
+                            <i class="fic glyphicon glyphicon-remove"></i>
+                        </a>
+                        <a role="button" tabindex="0" data-nq-show-edit="" class="titip-left" data-title="Update">
+                            <i class="fic glyphicon glyphicon-pencil"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot class="nq-fix-table-scroll">
+                <tr>
+                    <th colspan="2">Name</th>
+                    <th class="col-xs-2">Coach</th>
+                    <th class="col-xs-3">Logo</th>
+                    <th class="col-xs-2">Win</th>
+                    <th class="col-xs-1">Loss</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="panel-footer clearfix">
+            <div class="row">
+                <div class="col-sm-6">
+                    <!--add data-nq-pageable-results directive where you want and how many you want-->
+                    <div data-nq-pageable-results=""></div>
+                </div>
+                <div class="col-sm-6">
+                    <!--add nq-pagination directive where you want and how many you want-->
+                    <div data-nq-pagination="" class="pull-right no-margin"></div>
+                </div>
+            </div>
+
+        </div>
+        <!--here is nq-pageable-template for edit or new-->
+        <div data-nq-pageable-template="" data-name="contactForm" ng-form="" data-alias="contact"
+             data-on-change="panelTitle = contact.firstname + ' ' + contact.lastname" ng-submit="$save()"
+             style="max-height:100%; overflow:hidden; overflow-y:auto;">
+            <!--You are not able to load your content via ng-include. However, I think this way may be a best practice -->
+            <div class="row">
+                <div class="col-sm-3">
+                    <a class="thumbnail" href="#">
+                        <img class="img-rounded" ng-src="http://quantumui.org/data/images/users/thumbs/{{contact.images.img256}}" />
+                    </a>
+                    <div class="margin-t">
+                        <ul class="nav nav-stacked nav-stripped nav-mixed">
+                            <li>
+                                <a href="#"><i class="fic glyphicon glyphicon-envelope"></i> Emails</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fic glyphicon glyphicon-calendar"></i> Meetings</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fic glyphicon glyphicon-phone"></i> Calls</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fic glyphicon glyphicon-comment"></i> Comments</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fic glyphicon glyphicon-picture"></i> Images</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="margin-t">
+                        <button type="button" class="btn btn-primary btn-striped btn-icon"><i class="fic fu-facebook"></i> f</button>
+                        <button type="button" class="btn btn-info btn-striped btn-icon"><i class="fic fu-twitter"></i> t</button>
+                        <button type="button" class="btn btn-danger btn-striped btn-icon"><i class="fic fu-google"></i> g</button>
+                        <button type="button" class="btn btn-inverse btn-striped btn-icon"><i class="fic fu-github"></i> gh</button>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" ng-model="contact.firstname" class="form-control" name="firstname" id="name" placeholder="first name" required min-length="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="surname"> Surname </label>
+                                <input type="text" class="form-control" ng-model="contact.lastname" name="surname" id="surname" placeholder="surname" required min-length="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fic fu-envelope"></i></span>
+                                    <input type="email" ng-model="contact.email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="notification">Notification Email</label>
+                                <div class="input-group">
+                                    <label class="input-group-addon">
+                                        <input type="checkbox">
+                                    </label>
+                                    <input type="email" name="notification" ng-model="contact.notifyemail" id="notification" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="site">
+                                    Web site
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fic fu-globe"></i></span>
+                                    <input type="text" ng-model="contact.website" nq-validate="url" class="form-control" id="site" placeholder="Web Site">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="income">Annual Income</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="text" class="form-control" ng-model="contact.income" id="income" nq-validate="number" maxlength="8" placeholder="income">
+                                    <span class="input-group-addon">.00</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="birthdate">Birth Date</label>
+                                <input name="birthdate" type="text" ng-model="contact.birthdate" class="form-control" nq-datepicker="" data-qo-format="DD-MM-YYYY" id="birthdate" data-qo-container="self" placeholder="birth date">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="eyeColor"> Eye Color </label>
+                                <input type="text" name="eyeColor" class="form-control" ng-model="contact.profile.eyeColor" id="eyeColor" placeholder="eye color">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" name="company" ng-model="contact.profile.company" id="company" class="form-control" maxlength="200" placeholder="company">
+                            </div>
+                            <div class="form-group">
+                                <label for="jobtitle">Jobtitle</label>
+                                <input type="text" name="jobtitle" ng-model="contact.profile.jobtitle" id="jobtitle" class="form-control" maxlength="200" placeholder="jobtitle">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender"> Gender</label>
+                                <div class="input-group">
+                                    <label class="radio-inline">
+                                        <input ng-model="contact.gender" value="male" name="gender" type="radio" data-styled-box=""> Male
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input ng-model="contact.gender" value="female" name="gender" type="radio" data-styled-box=""> Female
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group ">
+                                <label for="school">School</label>
+                                <input type="text" name="school" ng-model="contact.profile.school" id="school" class="form-control" maxlength="300" placeholder="school">
+                            </div>
+                            <div class="row">
+                                <div class="form-group  col-sm-4">
+                                    <label for="degree">Degree</label>
+                                    <input name="degree" type="text" ng-model="contact.profile.degree" class="form-control" id="degree" placeholder="degree">
+
+                                </div>
+                                <div class="form-group col-sm-8">
+                                    <label for="graduate">Graduate</label>
+                                    <input name="graduate" type="text" ng-model="contact.profile.graduate" class="form-control" id="graduate" placeholder="graduate">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">
+                                    Country
+                                </label>
+                                <button nq-select="" ng-model="contact.profile.country" data-qo-container="false" data-qo-result-key="countriesOptions"
+                                        class="btn btn-default form-control"
+                                        ng-options="countr.name as countr.name for countr in countriesOptions"
+                                        data-qo-url="/api/countries" data-qo-placeholder="country ng-optios..."></button>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">
+                                    City
+                                </label>
+                                <ul nq-select="" data-qo-display-type="input" data-qo-container="false" data-qo-result-key="citiesArray" data-qo-model-is-label="true"
+                                    ng-model="contact.profile.city" data-qo-placeholder="city" data-qo-url="/documents/data/cities.json">
+                                    <li ng-repeat="city in citiesArray | orderBy:'state'" data-select-option=""
+                                        data-option-value="city.city" data-option-label="city.city">
+                                                        <span style="display:block; white-space:nowrap">
+                                                            {{city.city}}, <small class="gray">{{city.state}}</small>
+                                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="form-group form-horizontal">
+                                <label for="phones">Phones</label>
+                                <div class="row form-group" ng-repeat="(key, phone) in contact.profile.phones">
+                                    <label class="col-sm-4">{{key | uppercase }} :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control input-sm" ng-model="phone" maxlength="16" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea rows="2" name="address" id="address" class="form-control" ng-model="contact.profile.address" maxlength="150"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+</div>
 
 
-  <h4>Upload on file select</h4>
-  <button multiple ngf-select="uploadFiles($files)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">Select Files</button>
-  <div class="button" ngf-select ng-model="files" ngf-multiple="true" ngf-pattern="'image/*" accept="image/*">Upload multiple images using model $watch</div>
-  <br><br>
 
-<div ui-view></div>
+  <!--<h4>Upload on file select</h4>-->
+  <!--<button multiple ngf-select="uploadFiles($files)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">Select Files</button>-->
+  <!--<div class="button" ngf-select ng-model="files" ngf-multiple="true" ngf-pattern="'image/*" accept="image/*">Upload multiple images using model $watch</div>-->
+  <!--<br><br>-->
+<!---->
+<!--<div ui-view></div>-->

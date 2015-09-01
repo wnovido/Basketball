@@ -7,6 +7,7 @@ underscore.factory('_', function() {
   return window._; //Underscore must already be loaded on the page
 });
 
+
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ui.router',
@@ -18,14 +19,16 @@ angular.module('myApp', [
   'underscore',
   'ngSanitize',
   'ngAnimate',
-  'ngQuantum','ui.bootstrap','myApp.login','myApp.signup'
+  'ngQuantum',
+  'ui.bootstrap',
+  'myApp.login',
+  'myApp.signup'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
       // For any unmatched url, send to /login
       $urlRouterProvider.otherwise("/login")
 })
-
 ;
 
 
