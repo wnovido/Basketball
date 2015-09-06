@@ -25,6 +25,10 @@ angular.module('myApp', [
   'myApp.signup'
 ])
 
+.run(['$templateCache', '$cacheFactory', '$rootScope',
+  function ($templateCache, $cacheFactory, $rootScope) {
+    $templateCache = false;
+  }])
 .config(function($stateProvider, $urlRouterProvider) {
       // For any unmatched url, send to /login
       $urlRouterProvider.otherwise("/login")

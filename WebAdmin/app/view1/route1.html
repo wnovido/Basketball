@@ -1,21 +1,20 @@
 <!--<h1>Route 1</h1>-->
 <!--<hr/>-->
 <!--<a ui-sref=".list">Show List</a>-->
-
+<!-- PAGINATION -->
 <div class="clearfix">
-    <h1> <i class="glyphicon glyphicon-fire"></i> List Of Teams</h1>
+    <h1> <i class="glyphicon glyphicon-fire"></i> Teams</h1>
     <hr />
-    <div class="panel panel-default" data-nq-pageable="contactList" data-qo-alias="contactsTable" data-qo-pageable-model="contacts"
+    <div class="panel panel-default" data-nq-pageable="teams" data-qo-alias="teamsTable" data-qo-pageable-model="teams"
          data-qo-selectable="true" data-on-refresh="tableScroller.refresh();">
-
         <div class="panel-heading clearfix">
             <!--add nq-paging-sizes directive where you want and how many you want-->
             <div class="pull-right" data-nq-paging-sizes=""></div>
             <!--add nq-table-search directive where you want and how many you want-->
             <div class="pull-right" data-nq-table-search="" data-search-fields="firstname,lastname,profile.jobtitle" style="margin-right:20px;"></div>
-            <h2 class="panel-title pull-left"><i class="fic glyphicon glyphicon-user"></i> Teams</h2>
+            <h2 class="panel-title pull-left"><i class="fic glyphicon glyphicon-user"></i> Contacts</h2>
             <div class="pull-left" style="padding-left:15px;">
-                <button type="button" class="btn btn-xs btn-info" ng-click="contactsTable.refresh()"><i class="fic glyphicon glyphicon-refresh"></i> Refresh</button>
+                <button type="button" class="btn btn-xs btn-info" ng-click="teamsTable.refresh()"><i class="fic glyphicon glyphicon-refresh"></i> Refresh</button>
             </div>
             <div class="pull-left" style="padding-left:15px;">
                 <button type="button" class="btn btn-xs btn-primary" data-nq-show-insert=""><i class="fic glyphicon glyphicon-plus-sign"></i> Add New</button>
@@ -24,53 +23,62 @@
                 <button type="button" class="btn btn-xs btn-danger" ng-click="contactsTable.removeRows()"><i class="fic glyphicon glyphicon-remove-circle"></i> Remove</button>
             </div>
         </div>
-
         <div class="panel-body table-responsive" data-nq-scroll="" data-qo-max-height="350px" data-qo-bar-offset="40" data-bar-model="tableScroller" style="overflow:hidden;">
             <table class="table table-bordered table-hover bg-white">
                 <!--nq-fix-table-scroll class would fix thead always visible at top of the table if you put the table into a scrollable container-->
                 <thead class="nq-fix-table-scroll">
                 <tr>
                     <!--nq-column-sort directive would bind sorting handler to the element-->
-                    <th colspan="2" data-nq-column-sort="firstname" data-use-template="true">Name</th>
+                    <th colspan="2" data-nq-column-sort="name" data-use-template="true">Name</th>
                     <th class="col-xs-2" data-nq-column-sort="profile.jobtitle" data-use-template="true">Coach</th>
-                    <th class="col-xs-3">Logo</th>
-                    <th class="col-xs-2">Win</th>
-                    <th class="col-xs-1">Loss</th>
+                    <th class="col-xs-3">Win</th>
+                    <th class="col-xs-2">Loss</th>
+                    <th class="col-xs-1">Not Sure Yet</th>
+                    <th class="col-xs-1">Action</th>
                 </tr>
                 </thead>
-
                 <tbody class="flattened">
                 <!--pageable-repeat is required sub directive-->
-                <tr class="" data-pageable-repeat="contact in contacts track by contact.id">
+                <tr class="" data-ng-repeat="contact in teams track by contact.team_id">
                     <td class="width-48">
                         <img class="img-circle" data-fall-back-bg="" ng-src="http://quantumui.org/data/images/users/thumbs/{{contact.images.img32}}" />
                     </td>
+
+                    <td>
+                        <span class="text-block text-lg">
+                            <strong>{{contact.name}}</strong>
+                        </span>
+                        <!--<i class="text-xs gray">{{contact.logo}}</i>-->
+                    </td>
+
+                    <td>
+                        <span class="text-block text-md">
+                            <strong>Dummy</strong>
+                        </span>
+                        <i class="text-xs gray">Dummy Again</i>
+                    </td>
+
+                    <td>
+                        <span class="text-block text-lg">
+                            <strong>0</strong>
+                        </span>
+                        <!--<i class="text-xs gray">Not sure what is this</i>-->
+                    </td>
+                    <td>
+                        <span class="text-block text-lg">
+                            <strong data-max-text-length="25">0</strong>
+                        </span>
+                        <!--<i data-max-text-length="30" data-use-tip="true" class="text-xs">And this one</i>-->
+                    </td>
                     <td>
                         <span class="text-block text-sm">
-                            <strong>{{contact.firstname}} {{contact.lastname}}</strong>
-                        </span>
-                        <i class="text-xs gray">{{contact.email}}</i>
-                    </td>
-                    <td>
-                        <span class="text-block text-xs">
-                            <small>{{contact.profile.company}}</small>
-                        </span>
-                        <i class="text-xs gray">{{contact.profile.jobtitle}}</i>
-                    </td>
-                    <td>
-                        <span class="text-block text-xs">
-                            <small data-max-text-length="25">{{contact.profile.graduate}}</small>
-                        </span>
-                        <i data-max-text-length="30" data-use-tip="true" class="text-xs">{{contact.profile.school}}</i>
-                    </td>
-                    <td>
-                        <span class="text-block text-sm">
-                            <small>{{contact.profile.phones.work}}</small>
+                            <small>xxx</small>
                         </span>
                         <span class="text-block">
-                            <span class="label text-xs label-info">Eye</span> <i class="text-xs gray"> {{contact.profile.eyeColor}}</i>
+                            <span class="label text-xs label-info">Standing</span> <i class="text-xs gray"> 1st</i>
                         </span>
                     </td>
+
                     <td>
                         <a role="button" tabindex="0" ng-click="removeRow()" class="titip-left" data-title="Remove">
                             <i class="fic glyphicon glyphicon-remove"></i>
@@ -85,9 +93,10 @@
                 <tr>
                     <th colspan="2">Name</th>
                     <th class="col-xs-2">Coach</th>
-                    <th class="col-xs-3">Logo</th>
-                    <th class="col-xs-2">Win</th>
-                    <th class="col-xs-1">Loss</th>
+                    <th class="col-xs-3">Win</th>
+                    <th class="col-xs-2">Loss</th>
+                    <th class="col-xs-1">Not Sure Yet</th>
+                    <th class="col-xs-1">Action</th>
                 </tr>
                 </tfoot>
             </table>
@@ -104,11 +113,12 @@
                     <div data-nq-pagination="" class="pull-right no-margin"></div>
                 </div>
             </div>
-
         </div>
+
+
         <!--here is nq-pageable-template for edit or new-->
-        <div data-nq-pageable-template="" data-name="contactForm" ng-form="" data-alias="contact"
-             data-on-change="panelTitle = contact.firstname + ' ' + contact.lastname" ng-submit="$save()"
+        <div data-nq-pageable-template="" data-name="teamForm" ng-form="" data-alias="team"
+             data-on-change="panelTitle = contact.name" ng-submit="$save()"
              style="max-height:100%; overflow:hidden; overflow-y:auto;">
             <!--You are not able to load your content via ng-include. However, I think this way may be a best practice -->
             <div class="row">
@@ -116,6 +126,7 @@
                     <a class="thumbnail" href="#">
                         <img class="img-rounded" ng-src="http://quantumui.org/data/images/users/thumbs/{{contact.images.img256}}" />
                     </a>
+                    <!--
                     <div class="margin-t">
                         <ul class="nav nav-stacked nav-stripped nav-mixed">
                             <li>
@@ -141,13 +152,14 @@
                         <button type="button" class="btn btn-danger btn-striped btn-icon"><i class="fic fu-google"></i> g</button>
                         <button type="button" class="btn btn-inverse btn-striped btn-icon"><i class="fic fu-github"></i> gh</button>
                     </div>
+                    -->
                 </div>
                 <div class="col-sm-8">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" ng-model="contact.firstname" class="form-control" name="firstname" id="name" placeholder="first name" required min-length="3">
+                                <input type="text" ng-model="contact.name" class="form-control" name="name" id="name" placeholder="name" required min-length="3">
                             </div>
                             <div class="form-group">
                                 <label for="surname"> Surname </label>
@@ -279,6 +291,10 @@
 </div>
 
 
+<h3>List of Teams</h3>
+<ul ng-repeat="team in teams">
+    <li>{{team.name}}</li>
+</ul>
 
   <!--<h4>Upload on file select</h4>-->
   <!--<button multiple ngf-select="uploadFiles($files)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">Select Files</button>-->
