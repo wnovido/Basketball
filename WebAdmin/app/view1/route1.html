@@ -3,9 +3,10 @@
 <!--<a ui-sref=".list">Show List</a>-->
 <!-- PAGINATION -->
 <div class="clearfix">
+
     <h1> <i class="glyphicon glyphicon-fire"></i> Teams</h1>
     <hr />
-    <div class="panel panel-default" data-nq-pageable="teams" data-qo-alias="teamsTable" data-qo-pageable-model="teams"
+    <div class="panel panel-default" data-nq-pageable="tc.teams" data-qo-alias="teamsTable" data-qo-pageable-model="teams"
          data-qo-selectable="true" data-on-refresh="tableScroller.refresh();">
         <div class="panel-heading clearfix">
             <!--add nq-paging-sizes directive where you want and how many you want-->
@@ -287,15 +288,17 @@
         </div>
     </div>
 
+
     <hr />
-</div>
+
 
 
 <h3>List of Teams</h3>
-<ul ng-repeat="team in teams">
+<ul ng-repeat="team in tc.teams">
     <li>{{team.name}}</li>
 </ul>
 
+</div>
   <!--<h4>Upload on file select</h4>-->
   <!--<button multiple ngf-select="uploadFiles($files)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">Select Files</button>-->
   <!--<div class="button" ngf-select ng-model="files" ngf-multiple="true" ngf-pattern="'image/*" accept="image/*">Upload multiple images using model $watch</div>-->
