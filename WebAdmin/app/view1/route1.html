@@ -291,12 +291,23 @@
     <hr />
 </div>
 
-
-<h3>List of Teams</h3>
-<ul ng-repeat="team in tc.teams">
-    <li>{{team.name}}</li>
-</ul>
-
+<h1> <i class="glyphicon glyphicon-fire"></i> Teams</h1>
+<hr />
+<!--<h3>List of Teams</h3>-->
+<table st-table="rowCollection" class="table table-striped">
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>logo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="team in tc.teams">
+        <td>{{team.name}}</td>
+        <td>{{team.logo}}</td>
+    </tr>
+    </tbody>
+</table>
 
   <!--<h4>Upload on file select</h4>-->
   <!--<button multiple ngf-select="uploadFiles($files)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">Select Files</button>-->

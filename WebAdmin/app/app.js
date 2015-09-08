@@ -22,7 +22,8 @@ angular.module('myApp', [
   'ngQuantum',
   'ui.bootstrap',
   'myApp.login',
-  'myApp.signup'
+  'myApp.signup',
+  'smart-table'
 ])
 
 .run(['$templateCache', '$cacheFactory', '$rootScope',
