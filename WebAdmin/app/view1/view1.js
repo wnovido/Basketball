@@ -2,10 +2,18 @@
 
 (function() {
 function TeamController(TeamService, _,$loading, $timeout, $q, $alert) {
-    this.teams = TeamService.query();
+    var this_team = this;
+
+    TeamService.query().$promise
+    .then(function getTeam(response) {
+            this_team.teams = response;
+        })
+    .catch(function errTeam(fallback) {
+            console.log(fallback.toUpperCase())
+        });
 
     var init = function() {
-        _.keys(this);
+        _.keys(this_team);
     };
 
     init();
