@@ -2,6 +2,27 @@
 <!--<hr/>-->
 <!--<a ui-sref=".list">Show List</a>-->
 <!-- PAGINATION -->
+
+<h1> <i class="glyphicon glyphicon-fire"></i> Teams</h1>
+<hr />
+<!--<h3>List of Teams</h3>-->
+<table st-table="rowCollection" class="table table-striped">
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>logo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="team in tc.teams">
+        <td>{{team.name}}</td>
+        <td>{{team.logo}}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
 <div class="clearfix">
 
     <h1> <i class="glyphicon glyphicon-fire"></i> Teams</h1>
@@ -291,27 +312,3 @@
     <hr />
 </div>
 
-<h1> <i class="glyphicon glyphicon-fire"></i> Teams</h1>
-<hr />
-<!--<h3>List of Teams</h3>-->
-<table st-table="rowCollection" class="table table-striped">
-    <thead>
-    <tr>
-        <th>name</th>
-        <th>logo</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="team in tc.teams">
-        <td>{{team.name}}</td>
-        <td>{{team.logo}}</td>
-    </tr>
-    </tbody>
-</table>
-
-  <!--<h4>Upload on file select</h4>-->
-  <!--<button multiple ngf-select="uploadFiles($files)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">Select Files</button>-->
-  <!--<div class="button" ngf-select ng-model="files" ngf-multiple="true" ngf-pattern="'image/*" accept="image/*">Upload multiple images using model $watch</div>-->
-  <!--<br><br>-->
-<!---->
-<!--<div ui-view></div>-->
