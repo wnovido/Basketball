@@ -14,16 +14,14 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="team in tc.teams">
-        <td>{{team.name}}</td>
-        <td>{{team.logo}}</td>
-    </tr>
+    <div ng-repeat="team in tc.teams">
+        <team-info id="wilsonID" team="team" title="'TeamBa'"></team-info>
+    </div>
     </tbody>
 </table>
 
 
-
-<div class="clearfix">
+<!-- <div class="clearfix"> -->
 
     <h1> <i class="glyphicon glyphicon-fire"></i> Teams</h1>
     <hr />
@@ -310,5 +308,6 @@
     </div>
 
     <hr />
+
 </div>
 

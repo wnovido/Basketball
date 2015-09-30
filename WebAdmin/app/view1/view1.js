@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-function TeamController(TeamService, _,$loading, $timeout, $q, $alert) {
+function TeamController(TeamService, _, $loading, $timeout, $q, $alert) {
     var this_team = this;
 
     TeamService.query().$promise

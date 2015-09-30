@@ -23,7 +23,8 @@ angular.module('myApp', [
   'ui.bootstrap',
   'myApp.login',
   'myApp.signup',
-  'smart-table'
+  'smart-table',
+  'app.directives.teamApp'
 ])
 
 .run(['$templateCache', '$cacheFactory', '$rootScope',
